@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .input-block {
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            display: inline-block
+        }
+    </style>
+</head>
+<body>
+    <h2>Sample Screen:</h2>
+    <div class="input-block">
+        <input type="text" id="input">
+        <button id="add">Add</button>
+        <button id="display">Display</button>
+    </div>
+    <div id="result"></div>
+    <script>
+        var input = document.getElementById('input')
+        var add = document.getElementById('add')
+        var display = document.getElementById('display')
+        var result = document.getElementById('result')
+        var array = []
+
+        function addNumber(){
+            add.addEventListener('click', function(){
+                console.log('oke1');
+                array.push(input.value);
+                input.value = ''
+            })
+        }
+        addNumber()
+
+        display.addEventListener('click', function(){
+            var num = ''
+            for (i = 0; i < array.length; i++){
+               num += 'Element ' + i + ' = ' + array[i] + '<br>'
+            }
+            result.innerHTML = num
+        })
+    </script>
+</body>
+</html>
